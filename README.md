@@ -162,15 +162,17 @@ source files, `node_modules`, or `.env`.
 - **Firestore rules** are still the default deny-all in the console;
   `firestore.rules` in this repo is ready to deploy. Until then, history
   uses the localStorage fallback (verified by test).
-- **Gemini free tier (project-level):** the fresh Firebase project
-  (`perisai-599c5`) currently returns `403 — the Gemini API free tier is not
+- **Gemini free tier (project-level):** three fresh Firebase projects
+  (`perisai-599c5`, `perisai2`, `perisai3`) all returned `403 — the Gemini API free tier is not
   available for this project` for cloud inference, across all tested models
-  (3.5/2.5/2.0 Flash-Lite/Flash). Two cloud calls succeeded right after
-  setup, then the project was restricted — consistent with Google's
+  (3.5/2.5/2.0 Flash-Lite/Flash). In each case the first 1–2 cloud calls
+  succeeded, then the project was restricted — consistent with Google's
   per-project free-tier eligibility check (see the [troubleshooting
   guide](https://ai.google.dev/gemini-api/docs/troubleshooting#project-unavailable)).
-  The fix path is verifying the project/account in Google AI Studio (free,
-  no payment) or using the hackathon's Google Account Quota. **On-device
+  The AI Studio verification path was checked and is closed for these
+  projects (status "Restricted", no free verification option). The fix path
+  is the hackathon's Google Account Quota (Sprint 3 requested 23 Nov 2026;
+  account expected Fri 27 Nov). **On-device
   triage is unaffected** — it needs no cloud access at all — and the app
   degrades gracefully (clear error + labelled rule-based fallback) when the
   cloud is unavailable.
