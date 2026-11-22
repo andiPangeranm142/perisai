@@ -174,6 +174,7 @@ const EN: Record<string, string> = {
     'Screenshot OCR needs live Firebase AI. In this demo build, please paste the message text instead.',
   'error.generic': 'Something went wrong. Please try again.',
   'error.retry': 'Try again',
+  'error.useRuleBased': 'Use rule-based analysis instead',
   'error.ocrEmpty': 'No text could be read from this screenshot. Try a clearer image, or paste the text.',
 
   // Mode badges
@@ -355,6 +356,7 @@ const ID: Record<string, string> = {
     'OCR tangkapan layar butuh Firebase AI asli. Di build demo ini, silakan tempel teks pesannya.',
   'error.generic': 'Terjadi kesalahan. Silakan coba lagi.',
   'error.retry': 'Coba lagi',
+  'error.useRuleBased': 'Pakai analisis berbasis aturan',
   'error.ocrEmpty': 'Tidak ada teks yang bisa dibaca dari tangkapan layar ini. Coba gambar yang lebih jelas, atau tempel teksnya.',
 
   // Mode badges

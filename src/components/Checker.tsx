@@ -177,9 +177,7 @@ export default function Checker({
                 className="btn btn-secondary btn-sm"
                 onClick={onUseRuleBased}
               >
-                {lang === 'id'
-                  ? 'Pakai analisis berbasis aturan'
-                  : 'Use rule-based analysis instead'}
+                {t(lang, 'error.useRuleBased')}
               </button>
             )}
           </div>
