@@ -1,0 +1,20 @@
+rules_version = '2';
+
+// Perisai history rules.
+// Each (anonymous) user can only read/write their own checks, stored under
+// `checks/{uid}/items/{itemId}`. Everything else is denied.
+//
+// NOTE: Firestore currently runs the default deny-all rules, so reads/writes
+// are rejected until these rules are deployed via the Firebase console.
+// Until then the app falls back to localStorage for history (by design).
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+    match /checks/{uid}/items/{itemId} {
+      allow read, write: if request.auth != null && request.auth.uid == uid;
+    }
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}
