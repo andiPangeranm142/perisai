@@ -115,12 +115,14 @@ Set `VITE_AI_MOCK=true` to force demo mode even with a config present.
    Until the rules are deployed, history falls back to localStorage.
 5. Copy the web app config into `.env` (see `.env.example`). **Never commit
    `.env`.**
-6. App Check: for local development, register a debug token in the console
-   (App Check → Apps → Manage debug tokens) and set
-   `VITE_APPCHECK_DEBUG_TOKEN` in `.env`. For production, add a reCAPTCHA
-   Enterprise site key as `VITE_RECAPTCHA_SITE_KEY` and enable enforcement.
-   The public demo runs with enforcement OFF so judges can try it without a
-   token.
+6. App Check: for local testing, register a debug token in the console
+   (App Check → Apps → Manage debug tokens) and set it in the browser
+   console as `self.FIREBASE_APPCHECK_DEBUG_TOKEN` before the app loads —
+   the app deliberately never reads a debug token from env, because Vite
+   would inline a `VITE_*` token into the production bundle. For production,
+   add a reCAPTCHA Enterprise site key as `VITE_RECAPTCHA_SITE_KEY` and
+   enable enforcement. The public demo runs with enforcement OFF so judges
+   can try it without a token.
 
 On-device inference needs **Chrome on desktop, v139+**, with the Gemini Nano
 model downloaded (`LanguageModel.availability()` in DevTools). In other

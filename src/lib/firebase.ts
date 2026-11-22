@@ -68,7 +68,6 @@ function getApp(): FirebaseApp {
     throw new Error('Firebase is not configured (missing .env values).');
   }
   if (!app) {
-    setupAppCheckDebugToken();
     app = initializeApp(firebaseConfig);
     initAppCheck(app);
   }
@@ -76,28 +75,17 @@ function getApp(): FirebaseApp {
 }
 
 /**
- * App Check debug token for local development (from `.env`, never committed).
- * Must be set before App Check initializes. Harmless when App Check itself
- * is not initialized (no reCAPTCHA site key yet) — the SDK simply reads the
- * flag at init time.
- */
-function setupAppCheckDebugToken(): void {
-  if (!import.meta.env.DEV) return;
-  const token = import.meta.env.VITE_APPCHECK_DEBUG_TOKEN as
-    | string
-    | undefined;
-  if (token) {
-    (globalThis as unknown as Record<string, unknown>).FIREBASE_APPCHECK_DEBUG_TOKEN =
-      token;
-  }
-}
-
-/**
- * App Check: Firebase AI Logic requires it. In local dev we use the debug
- * provider; in production we use reCAPTCHA Enterprise when a site key is
- * configured. When no site key is configured, App Check init is skipped and
+ * App Check: Firebase AI Logic requires it. When a reCAPTCHA Enterprise site
+ * key is configured we initialize it; otherwise init is skipped and
  * enforcement must stay OFF in the Firebase console (documented in README)
  * so the public demo keeps working for judges.
+ *
+ * NOTE: there is deliberately NO App Check debug-token wiring in this file.
+ * A `VITE_APPCHECK_DEBUG_TOKEN` read — even inside an `import.meta.env.DEV`
+ * guard — gets inlined by Vite into the production bundle (verified 23 Nov
+ * 2026: the token string survived minification). For local App Check testing,
+ * set `self.FIREBASE_APPCHECK_DEBUG_TOKEN` manually in the browser console
+ * before the app loads; never put a debug token in a `VITE_*` variable.
  */
 function initAppCheck(firebaseApp: FirebaseApp): void {
   if (appCheckInit) return;

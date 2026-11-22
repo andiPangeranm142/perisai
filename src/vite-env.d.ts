@@ -12,7 +12,6 @@ interface ImportMetaEnv {
   /** Optional reCAPTCHA Enterprise site key for App Check. Omit to skip App Check. */
   readonly VITE_RECAPTCHA_SITE_KEY?: string;
   /** App Check debug token for local development only (never commit). */
-  readonly VITE_APPCHECK_DEBUG_TOKEN?: string;
 }
 
 interface ImportMeta {
