@@ -17,6 +17,14 @@ describe('mockTriage', () => {
     expect(out.language).toBe('id');
   });
 
+  it('keeps URLs intact in evidence quotes', () => {
+    const out = mockTriage(byId('bank-otp').text);
+    const otp = out.patterns.find((p) => p.id === 'otp-request');
+    expect(otp?.evidence).toContain('bit.ly/bri-verif-aman');
+    const link = out.patterns.find((p) => p.id === 'suspicious-link');
+    expect(link?.evidence).toContain('http://bit.ly/bri-verif-aman');
+  });
+
   it('rates the task-job message as medium risk', () => {
     const out = mockTriage(byId('job-task').text);
     expect(out.risk).toBe('medium');

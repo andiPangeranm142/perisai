@@ -1,0 +1,322 @@
+.landing {
+  padding-bottom: 0;
+}
+
+/* ---- Hero ---- */
+.landing-hero {
+  background: linear-gradient(180deg, var(--navy) 0%, #123049 100%);
+  color: #fff;
+  padding: 56px 0 48px;
+}
+
+.landing-hero-inner {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.landing-hero-badge {
+  background: rgba(94, 234, 212, 0.12);
+  color: #99f6e4;
+  border-color: rgba(94, 234, 212, 0.35);
+}
+
+.landing-hero-title {
+  margin: 20px 0 0;
+  max-width: 720px;
+  font-size: clamp(2rem, 6vw, 3.2rem);
+}
+
+.landing-hero-accent {
+  color: #5eead4;
+}
+
+.landing-hero-subtitle {
+  max-width: 640px;
+  margin: 16px 0 0;
+  color: #cbd5e1;
+  font-size: 1.05rem;
+}
+
+.landing-hero-cta {
+  display: flex;
+  gap: 12px;
+  margin-top: 28px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.landing-engine-status {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  max-width: 640px;
+}
+
+.landing-offline {
+  margin: 0;
+  background: var(--med-bg);
+  color: var(--med);
+  border: 1px solid var(--med-line);
+  border-radius: var(--radius-sm);
+  padding: 10px 14px;
+  font-size: 0.88rem;
+  text-align: center;
+}
+
+.landing-engine-note {
+  font-size: 0.88rem;
+  color: #94a3b8;
+  text-align: center;
+}
+
+.landing-stats {
+  display: flex;
+  gap: 16px;
+  margin: 36px 0 0;
+  padding: 0;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.landing-stat {
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+  gap: 2px;
+  min-width: 140px;
+  flex: 1 1 140px;
+  max-width: 220px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: var(--radius);
+  padding: 16px 12px;
+}
+
+.landing-stat-value {
+  margin: 0;
+  font-size: 1.7rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: #5eead4;
+  line-height: 1.1;
+}
+
+.landing-stat-label {
+  font-size: 0.82rem;
+  color: #cbd5e1;
+  text-align: center;
+  line-height: 1.4;
+}
+
+.landing-trust {
+  margin: 24px 0 0;
+  font-size: 0.9rem;
+  color: #94a3b8;
+}
+
+.landing-demo-note {
+  margin: 12px 0 0;
+  max-width: 560px;
+  color: #94a3b8 !important;
+}
+
+/* ---- Sections ---- */
+.landing-section {
+  padding: 56px 0;
+}
+
+.landing-section-title {
+  text-align: center;
+  margin-bottom: 8px;
+}
+
+.landing-section-subtitle {
+  text-align: center;
+  color: var(--muted);
+  max-width: 600px;
+  margin: 0 auto 32px;
+}
+
+/* ---- How it works ---- */
+.landing-steps {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+}
+
+.landing-step {
+  padding: 24px;
+  position: relative;
+}
+
+.landing-step-num {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--brand);
+  color: #fff;
+  font-weight: 800;
+  font-size: 1.05rem;
+  margin-bottom: 14px;
+}
+
+.landing-step-title {
+  margin-bottom: 8px;
+}
+
+.landing-step-desc {
+  margin: 0;
+  color: var(--ink-2);
+  font-size: 0.95rem;
+}
+
+/* ---- Hybrid ---- */
+.landing-hybrid {
+  background: var(--surface-2);
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+.landing-hybrid-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+}
+
+.landing-engine-card {
+  padding: 24px;
+}
+
+.landing-engine-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  margin-bottom: 14px;
+}
+
+.landing-engine-icon-device {
+  background: var(--brand-bg);
+  color: var(--brand-dark);
+}
+
+.landing-engine-icon-cloud {
+  background: #eef4ff;
+  color: #3538cd;
+}
+
+.landing-points {
+  list-style: none;
+  margin: 16px 0 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.landing-points li {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  font-size: 0.95rem;
+  color: var(--ink-2);
+}
+
+.landing-points li svg {
+  flex: none;
+  margin-top: 4px;
+  color: var(--brand);
+}
+
+.landing-hybrid-note {
+  text-align: center;
+  color: var(--muted);
+  font-size: 0.92rem;
+  max-width: 640px;
+  margin: 28px auto 0;
+}
+
+/* ---- Final CTA ---- */
+.landing-final {
+  padding: 56px 0 64px;
+}
+
+.landing-final-inner {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.landing-final-title {
+  margin-bottom: 8px;
+  max-width: 640px;
+}
+
+/* The hero accent teal is designed for the navy hero; on the white final
+   band it needs the darker brand colour for readable contrast. */
+.landing-final .landing-hero-accent {
+  color: var(--brand-dark);
+}
+
+@media (min-width: 640px) {
+  .landing-steps,
+  .landing-hybrid-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .landing-steps .landing-step:last-child {
+    grid-column: span 2;
+  }
+}
+
+@media (min-width: 900px) {
+  .landing-steps {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .landing-steps .landing-step:last-child {
+    grid-column: auto;
+  }
+}
+
+@media (max-width: 560px) {
+  /* Three stat cards in one row are cramped below ~560px; stack them. */
+  .landing-stats {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .landing-stat {
+    width: 100%;
+    max-width: 320px;
+    flex-basis: auto;
+  }
+}
+
+@media (max-width: 420px) {
+  .landing-hero {
+    padding: 40px 0 36px;
+  }
+
+  .landing-hero-cta .btn {
+    width: 100%;
+  }
+
+  .landing-section {
+    padding: 40px 0;
+  }
+}

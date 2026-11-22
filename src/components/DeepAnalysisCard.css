@@ -1,0 +1,137 @@
+.deep-card {
+  padding: 22px;
+  width: 100%;
+}
+
+.deep-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+
+.deep-title {
+  margin: 0;
+  font-size: 1.35rem;
+}
+
+.deep-meta {
+  margin: 0 0 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.deep-meta-row {
+  display: grid;
+  grid-template-columns: 130px 1fr;
+  gap: 12px;
+  align-items: baseline;
+}
+
+.deep-meta-row dt {
+  font-weight: 650;
+  font-size: 0.9rem;
+  color: var(--ink-2);
+}
+
+.deep-meta-row dd {
+  margin: 0;
+}
+
+.deep-section-title {
+  font-size: 1rem;
+  margin: 20px 0 10px;
+}
+
+.deep-tactics {
+  list-style: none;
+  counter-reset: tactic;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.deep-tactic {
+  counter-increment: tactic;
+  background: var(--surface-2);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  padding: 14px 16px;
+}
+
+.deep-tactic-name {
+  font-size: 0.98rem;
+  margin: 0 0 8px;
+}
+
+.deep-tactic-name::before {
+  content: counter(tactic) ". ";
+  color: var(--brand-dark);
+}
+
+.deep-tactic-evidence {
+  margin: 0 0 8px;
+  padding: 8px 12px;
+  border-left: 3px solid var(--brand);
+  background: var(--surface);
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+  font-style: italic;
+  color: var(--ink-2);
+  font-size: 0.92rem;
+}
+
+.deep-tactic-explanation {
+  margin: 0;
+  font-size: 0.95rem;
+}
+
+.deep-risk-factors {
+  margin: 0;
+  padding-left: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.deep-safe-steps {
+  margin: 0;
+  padding-left: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.deep-reply {
+  margin-top: 22px;
+  border-top: 1px solid var(--line);
+  padding-top: 18px;
+}
+
+.deep-reply .deep-section-title {
+  margin-top: 0;
+}
+
+.deep-reply-text {
+  background: var(--brand-bg);
+  border: 1px solid #99f6e4;
+  border-radius: var(--radius-sm);
+  padding: 12px 14px;
+  font-size: 0.95rem;
+  margin-bottom: 12px;
+}
+
+@media (max-width: 480px) {
+  .deep-card {
+    padding: 16px;
+  }
+
+  .deep-meta-row {
+    grid-template-columns: 1fr;
+    gap: 2px;
+  }
+}

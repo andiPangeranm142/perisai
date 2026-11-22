@@ -1,0 +1,49 @@
+/* App shell layout. Component styles live in each component's CSS file. */
+
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.app-main {
+  flex: 1;
+  padding-bottom: 64px;
+}
+
+.offline-strip {
+  background: var(--med-bg);
+  border-bottom: 1px solid var(--med-line);
+  color: var(--med);
+  font-size: 0.88rem;
+  font-weight: 600;
+  padding: 10px 0;
+}
+
+.check-view {
+  padding-top: 32px;
+}
+
+.results-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-top: 24px;
+  scroll-margin-top: 88px;
+}
+
+.try-another {
+  display: flex;
+  justify-content: center;
+  padding: 8px 0 16px;
+}
+
+@media (max-width: 640px) {
+  .check-view {
+    padding-top: 20px;
+  }
+
+  .app-main {
+    padding-bottom: 40px;
+  }
+}

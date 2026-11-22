@@ -30,6 +30,12 @@ const EN: Record<string, string> = {
   'hero.stat3value': '2s',
   'hero.stat3label': 'typical instant triage',
   'hero.trust': 'Free · No sign-up · Works offline for triage',
+  'landing.deviceDownloading':
+    'The on-device model is downloading — your first check may use the cloud.',
+  'landing.deviceDownload':
+    'The on-device model downloads on your first check (Chrome desktop).',
+  'landing.deviceCloud':
+    'This browser has no on-device model, so checks run in the cloud.',
 
   // How it works
   'how.title': 'How Perisai works',
@@ -205,6 +211,12 @@ const ID: Record<string, string> = {
   'hero.stat3value': '2 dtk',
   'hero.stat3label': 'triase instan pada umumnya',
   'hero.trust': 'Gratis · Tanpa daftar · Triase jalan offline',
+  'landing.deviceDownloading':
+    'Model on-device sedang diunduh — pemeriksaan pertama Anda mungkin memakai cloud.',
+  'landing.deviceDownload':
+    'Model on-device diunduh saat pemeriksaan pertama Anda (Chrome desktop).',
+  'landing.deviceCloud':
+    'Browser ini tidak punya model on-device, jadi pemeriksaan berjalan di cloud.',
 
   // How it works
   'how.title': 'Cara kerja Perisai',

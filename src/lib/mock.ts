@@ -136,8 +136,11 @@ function matchRule(text: string, rule: PatternRule): boolean {
 
 /** Finds the first sentence containing a matched keyword, as evidence. */
 function findEvidence(text: string, rule: PatternRule): string | undefined {
+  // Split into sentences, but never split inside a URL: a period only ends
+  // a sentence when followed by whitespace and a capital letter, digit,
+  // quote or dash (so "bit.ly/..." stays whole).
   const sentences = text
-    .split(/[\n.!?]+/)
+    .split(/[\n!?]+|\.\s+(?=[A-Z0-9"'\-])/)
     .map((s) => s.trim())
     .filter((s) => s.length > 0);
   const lower = (s: string) => s.toLowerCase();

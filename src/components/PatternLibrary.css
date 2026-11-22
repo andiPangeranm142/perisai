@@ -1,0 +1,119 @@
+.library {
+  padding: 40px 0 64px;
+}
+
+.library-header {
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.library-subtitle {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.library-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+}
+
+.library-card {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+}
+
+.library-card-title {
+  font-size: 1.15rem;
+  margin-bottom: 8px;
+}
+
+.library-card-desc {
+  color: var(--ink-2);
+  font-size: 0.95rem;
+  margin-bottom: 16px;
+}
+
+.library-label {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.82rem;
+  font-weight: 750;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--high);
+  margin: 16px 0 8px;
+}
+
+.library-label:first-of-type {
+  margin-top: 0;
+}
+
+.library-label svg {
+  flex: none;
+}
+
+.library-flags {
+  margin: 0;
+  padding: 0 0 0 20px;
+  color: var(--ink-2);
+  font-size: 0.92rem;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.library-flags li::marker {
+  color: var(--high);
+}
+
+.library-example {
+  margin: 0;
+  padding: 12px 14px;
+  background: var(--surface-2);
+  border-left: 3px solid var(--brand);
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+  font-size: 0.92rem;
+  color: var(--ink-2);
+  font-style: italic;
+  line-height: 1.6;
+}
+
+.library-action {
+  font-size: 0.92rem;
+  color: var(--ink-2);
+  margin: 16px 0;
+}
+
+.library-action strong {
+  color: var(--safe);
+}
+
+.library-card .btn {
+  margin-top: auto;
+  align-self: flex-start;
+}
+
+@media (min-width: 640px) {
+  .library-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 420px) {
+  .library {
+    padding: 28px 0 48px;
+  }
+
+  .library-card {
+    padding: 20px 16px;
+  }
+
+  .library-card .btn {
+    align-self: stretch;
+    white-space: normal;
+    text-align: center;
+  }
+}

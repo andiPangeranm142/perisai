@@ -1,0 +1,137 @@
+.triage-result {
+  padding: 22px;
+  width: 100%;
+}
+
+.triage-header {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 18px;
+}
+
+.triage-confidence {
+  margin-bottom: 18px;
+}
+
+.triage-confidence-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 12px;
+  margin-bottom: 6px;
+}
+
+.triage-confidence-label {
+  font-weight: 650;
+}
+
+.triage-confidence-value {
+  font-variant-numeric: tabular-nums;
+  font-weight: 700;
+}
+
+.triage-confidence-bar {
+  height: 8px;
+  background: var(--surface-3);
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.triage-confidence-fill {
+  height: 100%;
+  border-radius: 999px;
+  transition: width 0.3s ease;
+}
+
+.triage-confidence-fill--safe {
+  background: var(--safe);
+}
+.triage-confidence-fill--low {
+  background: var(--low);
+}
+.triage-confidence-fill--medium {
+  background: var(--med);
+}
+.triage-confidence-fill--high {
+  background: var(--high);
+}
+
+.triage-section-title {
+  font-size: 0.95rem;
+  margin: 0 0 6px;
+}
+
+.triage-summary {
+  margin-bottom: 18px;
+}
+
+.triage-no-patterns {
+  margin-bottom: 18px;
+}
+
+.triage-patterns {
+  list-style: none;
+  margin: 0 0 18px;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.triage-pattern {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  background: var(--surface-2);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  padding: 10px 14px;
+}
+
+.triage-pattern-name {
+  font-weight: 650;
+  font-size: 0.92rem;
+}
+
+.triage-pattern-evidence {
+  color: var(--muted);
+  font-size: 0.88rem;
+  font-style: italic;
+  quotes: '"' '"';
+}
+
+.triage-language {
+  margin-bottom: 0;
+}
+
+.triage-language strong {
+  color: var(--ink-2);
+}
+
+.triage-deep-offer {
+  margin-top: 18px;
+  border-top: 1px solid var(--line);
+  padding-top: 18px;
+}
+
+.triage-deep-offer-title {
+  font-size: 1.05rem;
+  margin-bottom: 4px;
+}
+
+.triage-deep-offer-desc {
+  margin-bottom: 12px;
+}
+
+.triage-saved {
+  margin: 18px 0 0;
+  padding-top: 12px;
+  border-top: 1px solid var(--line);
+}
+
+@media (max-width: 480px) {
+  .triage-result {
+    padding: 16px;
+  }
+}
