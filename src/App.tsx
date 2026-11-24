@@ -368,6 +368,7 @@ export default function App() {
               checking={status === 'triaging'}
               ocrLoading={ocrLoading}
               error={error}
+              errorSource={errorSource}
               onRetry={handleRetry}
               onUseRuleBased={handleUseRuleBased}
               online={online}

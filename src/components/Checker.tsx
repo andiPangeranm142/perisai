@@ -15,6 +15,8 @@ export interface CheckerProps {
   checking: boolean;
   ocrLoading: boolean;
   error: PerisaiError | null;
+  /** Which step failed — 'ocr' failures have no message to retry with. */
+  errorSource: 'triage' | 'deep' | 'ocr' | null;
   onRetry: () => void;
   onUseRuleBased: () => void;
   online: boolean;
@@ -43,6 +45,7 @@ export default function Checker({
   checking,
   ocrLoading,
   error,
+  errorSource,
   onRetry,
   onUseRuleBased,
   online,
@@ -167,19 +170,28 @@ export default function Checker({
             <button
               type="button"
               className="btn btn-primary btn-sm"
-              onClick={onRetry}
+              onClick={
+                // OCR failures have no message text to retry with — the
+                // only useful retry is picking the screenshot again.
+                errorSource === 'ocr'
+                  ? () => fileInputRef.current?.click()
+                  : onRetry
+              }
             >
               {t(lang, 'error.retry')}
             </button>
-            {(error.code === 'AI_UNAVAILABLE' || error.code === 'OFFLINE') && (
-              <button
-                type="button"
-                className="btn btn-secondary btn-sm"
-                onClick={onUseRuleBased}
-              >
-                {t(lang, 'error.useRuleBased')}
-              </button>
-            )}
+            {(error.code === 'AI_UNAVAILABLE' || error.code === 'OFFLINE') &&
+              // No message text exists after an OCR failure, so the
+              // rule-based engine has nothing to analyse — hide it.
+              errorSource !== 'ocr' && (
+                <button
+                  type="button"
+                  className="btn btn-secondary btn-sm"
+                  onClick={onUseRuleBased}
+                >
+                  {t(lang, 'error.useRuleBased')}
+                </button>
+              )}
           </div>
         </div>
       )}
