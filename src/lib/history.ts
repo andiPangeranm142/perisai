@@ -1,7 +1,8 @@
 /**
  * Check history: Firestore (per-user, anonymous auth) with a localStorage
- * fallback. Firestore is best-effort — rules may still be deny-all until
- * `firestore.rules` is deployed, and the app must never break because of it.
+ * fallback. Firestore is best-effort — the app must never break because
+ * of it. The rules in `firestore.rules` were deployed 24 Nov 2026, so
+ * Firestore is the primary store and localStorage is the fallback.
  *
  * Storage layout (Firestore): `checks/{uid}/items/{itemId}` (see
  * firestore.rules). Local mirror: `perisai-history-v1` in localStorage, or

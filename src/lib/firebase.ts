@@ -90,6 +90,16 @@ function getApp(): FirebaseApp {
 function initAppCheck(firebaseApp: FirebaseApp): void {
   if (appCheckInit) return;
   appCheckInit = true;
+  // App Check attestation needs a browser (reCAPTCHA Enterprise loads a
+  // script and needs the DOM). In Node (unit/live tests) there is no DOM:
+  // the provider registers but token acquisition hangs forever, so every
+  // AI call stalls until the test times out (verified 25 Nov 2026 — the
+  // live test went from failing fast with 403 to two 120 s timeouts once
+  // VITE_RECAPTCHA_SITE_KEY was added to .env). Skip init outside a
+  // browser; enforcement is OFF, so calls proceed without a token there.
+  if (typeof window === 'undefined' || typeof document === 'undefined') {
+    return;
+  }
   const siteKey = import.meta.env.VITE_RECAPTCHA_SITE_KEY as
     | string
     | undefined;

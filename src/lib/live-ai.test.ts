@@ -51,7 +51,7 @@ describe.skipIf(!LIVE)('live Firebase AI Logic', () => {
   );
 
   it(
-    'history survives Firestore deny-all rules via local fallback',
+    'history round-trips through Firestore (local fallback if unavailable)',
     async () => {
       const record = makeRecord('live test message', 'high', 'cloud', 'test');
       const where = await saveCheck(record);

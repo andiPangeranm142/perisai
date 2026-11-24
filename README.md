@@ -157,11 +157,14 @@ GitHub Pages, **dist-only**: the `gh-pages` branch contains only the
 production build output (`index.html` + `assets/` + `.nojekyll`) — never
 source files, `node_modules`, or `.env`.
 
-## Status / known issues (23 Nov 2026)
+## Status / known issues (25 Nov 2026)
 
-- **Firestore rules** are still the default deny-all in the console;
-  `firestore.rules` in this repo is ready to deploy. Until then, history
-  uses the localStorage fallback (verified by test).
+- **Firestore rules** were deployed 24 Nov 2026 (per-user
+  `checks/{uid}/items/*` rules from `firestore.rules`); history now syncs
+  to Firestore, with localStorage as the fallback.
+- **App Check (production)** is registered for the public demo (reCAPTCHA
+  Enterprise site key for `andiPangeranm142.github.io`), with enforcement
+  OFF everywhere so judges' browsers are never blocked.
 - **Gemini free tier (project-level):** three fresh Firebase projects
   (`perisai-599c5`, `perisai2`, `perisai3`) all returned `403 — the Gemini API free tier is not
   available for this project` for cloud inference, across all tested models
@@ -171,8 +174,9 @@ source files, `node_modules`, or `.env`.
   guide](https://ai.google.dev/gemini-api/docs/troubleshooting#project-unavailable)).
   The AI Studio verification path was checked and is closed for these
   projects (status "Restricted", no free verification option). The fix path
-  is the hackathon's Google Account Quota (Sprint 3 requested 23 Nov 2026;
-  account expected Fri 27 Nov). **On-device
+  is the hackathon's Google Account Quota (Sprint 3 requested 23 Nov 2026,
+  approved the same day; identity verification completed 23 Nov; account
+  expected Fri 27 Nov). **On-device
   triage is unaffected** — it needs no cloud access at all — and the app
   degrades gracefully (clear error + labelled rule-based fallback) when the
   cloud is unavailable.
